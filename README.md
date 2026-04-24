@@ -1,19 +1,15 @@
-# Hyde Tech — v5 preview (home page)
+# Hyde Tech — v6 preview (home)
 
-Bleeding-edge AI-forward dark-mode redesign using Hyde Tech's real brand (purple #7C3AED + gold #F59E0B + neon accents). Noindexed preview.
+Concept: "The Call" — one cinematic hero where the AI phone agent call plays out live in front of you, framed by the real brand logo.
 
-Source of truth: `Hyde Tech Solutions/07 - Website/site-v5/` in the Claude Folder.
+Signature moves (fewer, bigger):
+- Real gold H logo (from `hyde-tech-assets` repo) used in header, hero center, footer.
+- Perspective grid floor receding into distance (Tron-style ambient background).
+- Giant logo with gold/purple halo glow, subtle float.
+- "Al"-in-"Always" glitch wordmark preserved from v1 brand.
+- LIVE call card streaming a realistic AI agent transcript character-by-character. Loops through 3 scripts.
+- Animated waveform bars under the call header, tinted to who's speaking.
+- Live timer counting call duration.
+- Subtle scroll reveals, no cursor orb, no magnetic buttons, no marquee, no spotlight hover.
 
-Signature moves:
-- Animated conic gradient orb behind hero (CSS @property hue interpolation)
-- Voice orb with morphing blob + Canvas audio-reactive waveform halo
-- Variable-font hero animating wght axis on load
-- Gradient text (gold→purple→cyan "shine" animation)
-- Magnetic CTAs + gold cursor follower orb (desktop only)
-- Scrolling marquee of client personas
-- Hover-spotlight on service cards (cursor-tracked radial gradient)
-- Live call-log feed with rotating fake entries
-- Noise film overlay + grid veil in hero
-- Scroll-driven reveals via animation-timeline: view()
-
-Other pages (services, ai-phone-agents, about, contact, 404) are placeholder-routed to home until the direction is confirmed.
+Noindexed, dev preview only.
