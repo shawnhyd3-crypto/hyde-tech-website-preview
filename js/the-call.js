@@ -17,6 +17,32 @@
     });
   }
 
+  /* --- Mouse-parallax tilt on the call card (Linear-style).
+         Desktop with fine pointer only. 3deg max. Respects reduced motion. --- */
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (canHover && !reduce) {
+    const hero = document.querySelector('.hero');
+    const card = document.querySelector('.the-call');
+    if (hero && card) {
+      let raf = null;
+      hero.addEventListener('pointermove', (e) => {
+        const r = hero.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;   // -0.5..0.5
+        const y = (e.clientY - r.top)  / r.height - 0.5;
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          card.style.setProperty('--ty', (x * 6).toFixed(2) + 'deg');   // rotateY follows x
+          card.style.setProperty('--tx', (-y * 4).toFixed(2) + 'deg');  // rotateX follows y (inverted)
+        });
+      });
+      hero.addEventListener('pointerleave', () => {
+        if (raf) cancelAnimationFrame(raf);
+        card.style.setProperty('--tx', '0deg');
+        card.style.setProperty('--ty', '0deg');
+      });
+    }
+  }
+
   /* --- Call timer (mm:ss) --- */
   const timerEl = document.getElementById('call-timer');
   function fmtTime(s) {

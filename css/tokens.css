@@ -75,9 +75,10 @@
   --step-3:    clamp(1.875rem, 1.7rem + 0.88vw, 2.5rem);
   --step-4:    clamp(2.25rem, 2rem + 1.3vw, 3.25rem);
   --step-5:    clamp(2.75rem, 2.3rem + 2.3vw, 4.75rem);
-  --step-hero: clamp(3rem, 2rem + 7.5vw, 8rem);
+  --step-hero: clamp(3.5rem, 2rem + 10vw, 9.5rem);      /* 56-152px — oversized, 2026 default */
   --step-mega: clamp(4rem, 2rem + 12vw, 12rem);
   --step-phone:clamp(2.5rem, 1.6rem + 5.5vw, 5.5rem);
+  --step-stat: clamp(3.5rem, 2rem + 8vw, 7rem);         /* big stats set in display weight */
 
   /* ----- Fonts -----
      Inter body, Instrument Serif italic for expressive accents. Mono only inside
