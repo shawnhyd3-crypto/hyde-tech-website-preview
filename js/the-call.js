@@ -25,37 +25,37 @@
     return `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
   }
 
-  /* --- Scripts — plausible AI phone agent conversations --- */
+  /* --- Scripts: real conversations people have with the demo line --- */
   const scripts = [
     [
-      { who: 'agent',  t: "Hi, thanks for calling Hyde Tech. How can I help?" },
-      { who: 'caller', t: "I need someone to install cameras at my shop." },
-      { who: 'agent',  t: "Happy to help. How many cameras and where's the location?" },
-      { who: 'caller', t: "Four — front, back, till area, and parking lot. We're in Hamilton on King." },
-      { who: 'agent',  t: "A 4-camera install starts at $850 including NVR and remote viewing. I can book Shawn for a site walk Thursday at 2pm or Friday at 10." },
-      { who: 'caller', t: "Thursday at 2 works." },
-      { who: 'agent',  t: "Booked. You'll get a text confirmation in 30 seconds." },
-      { who: 'system', t: "Booked — Thursday 2pm · Site survey · Hamilton" },
-    ],
-    [
       { who: 'agent',  t: "Hyde Tech, how can I help?" },
-      { who: 'caller', t: "Our WiFi keeps dropping in the back office." },
-      { who: 'agent',  t: "How many devices connect to it and how big is the space?" },
-      { who: 'caller', t: "Ten devices, maybe 2,000 square feet." },
-      { who: 'agent',  t: "Sounds like a coverage problem. A site survey is $350 and we map every dead zone. I've got openings Tuesday at 11 or Wednesday at 3." },
-      { who: 'caller', t: "Wednesday." },
-      { who: 'agent',  t: "Wednesday 3pm. Texting confirmation now." },
-      { who: 'system', t: "Booked — Wednesday 3pm · Site survey · WiFi" },
+      { who: 'caller', t: "I need cameras at my shop." },
+      { who: 'agent',  t: "Happy to help. How many, and where are you?" },
+      { who: 'caller', t: "Four. Front, back, till area, parking lot. Hamilton on King." },
+      { who: 'agent',  t: "A 4-camera install starts at $850 with the NVR and remote viewing. I can get Shawn out Thursday at 2 or Friday at 10." },
+      { who: 'caller', t: "Thursday at 2." },
+      { who: 'agent',  t: "Booked. You'll get a text to confirm in 30 seconds." },
+      { who: 'system', t: "Booked. Thursday 2pm. Site walk. Hamilton." },
     ],
     [
-      { who: 'agent',  t: "Hi, Hyde Tech — what can I help you with?" },
+      { who: 'agent',  t: "Hyde Tech, what's going on?" },
+      { who: 'caller', t: "Our WiFi keeps dropping in the back office." },
+      { who: 'agent',  t: "How many devices, and how big is the space?" },
+      { who: 'caller', t: "About ten devices. Maybe 2,000 square feet." },
+      { who: 'agent',  t: "Sounds like a coverage issue. A site survey is $350 and I map every dead zone. Tuesday at 11 or Wednesday at 3?" },
+      { who: 'caller', t: "Wednesday." },
+      { who: 'agent',  t: "Wednesday at 3. Confirmation coming to this number." },
+      { who: 'system', t: "Booked. Wednesday 3pm. WiFi survey." },
+    ],
+    [
+      { who: 'agent',  t: "Hi, Hyde Tech. What do you need?" },
       { who: 'caller', t: "How much is the AI phone agent?" },
-      { who: 'agent',  t: "Five hundred for setup and between seventy-nine and one twenty-nine a month depending on call volume." },
+      { who: 'agent',  t: "$500 for setup. Then $79 to $129 a month, depending on call volume." },
       { who: 'caller', t: "Can I try it first?" },
-      { who: 'agent',  t: "You're talking to it right now. I'm an agent built on the same stack we sell. Want me to book a 15-minute consult with Shawn?" },
-      { who: 'caller', t: "Sure — tomorrow morning?" },
-      { who: 'agent',  t: "Ten AM tomorrow. Confirmation coming to this number." },
-      { who: 'system', t: "Booked — Tomorrow 10am · Consult · AI agent" },
+      { who: 'agent',  t: "You're talking to it. I'm the same system Shawn sets up for clients. Want me to book you a 15-minute call with him?" },
+      { who: 'caller', t: "Sure. Tomorrow morning?" },
+      { who: 'agent',  t: "10am tomorrow. I'll text you the confirmation." },
+      { who: 'system', t: "Booked. Tomorrow 10am. Consult." },
     ],
   ];
 

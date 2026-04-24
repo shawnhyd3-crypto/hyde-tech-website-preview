@@ -73,20 +73,19 @@
   background: rgba(10, 10, 20, 0.85);
   backdrop-filter: saturate(140%) blur(14px);
   border-bottom: 1px solid var(--hairline);
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--step--2);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
 }
 .live-belt__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-m);
-  padding-block: 0.6rem;
+  padding-block: 0.65rem;
   padding-inline: var(--space-m);
   max-width: 1320px;
   margin-inline: auto;
-  text-transform: uppercase;
 }
 .live-belt__dot {
   display: inline-block;
@@ -100,14 +99,21 @@
   50%      { box-shadow: 0 0 0 9px rgba(239, 68, 68, 0), 0 0 20px rgba(239, 68, 68, 0.9); }
 }
 .live-belt__status {
-  display: inline-flex; align-items: center; gap: 0.65rem;
+  display: inline-flex; align-items: center; gap: 0.6rem;
   color: var(--text-secondary);
 }
-.live-belt__status strong { color: var(--neon-red); font-weight: 700; }
+.live-belt__status strong {
+  color: var(--neon-red);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
 .live-belt a {
   color: var(--text-primary);
   font-variant-numeric: tabular-nums;
   font-weight: 600;
+  font-family: var(--font-mono);
   transition: color var(--dur-fast) var(--ease-out);
 }
 .live-belt a:hover { color: var(--gold-400); }
@@ -274,11 +280,9 @@
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-mono);
-  font-size: var(--step--2);
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
+  gap: 0.55rem;
+  font-family: var(--font-body);
+  font-size: var(--step--1);
   color: var(--text-secondary);
   margin-block-end: 2rem;
   padding: 0.45rem 1rem;
@@ -286,13 +290,14 @@
   border-radius: var(--radius-full);
   background: rgba(124, 58, 237, 0.08);
   backdrop-filter: blur(10px);
+  font-weight: 500;
 }
 .hero-eyebrow::before {
   content: "";
   width: 0.4rem; height: 0.4rem;
   border-radius: 50%;
   background: var(--gold-500);
-  box-shadow: 0 0 12px var(--gold-500);
+  box-shadow: 0 0 10px var(--gold-500);
 }
 
 /* Giant logo moment — the central image that grounds the page */
@@ -337,15 +342,22 @@
 .hero h1 {
   max-width: 14ch;
   margin-inline: auto;
-  margin-block-end: 1.25rem;
+  margin-block-end: 1.5rem;
   font-size: var(--step-hero);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  font-weight: 700;
   color: var(--text-primary);
 }
 .hero h1 .line { display: block; }
 .hero h1 .gold { color: var(--gold-400); }
+.hero h1 em,
+.hero h1 .accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
 
 /* The signature "Al"-in-"Always" glitch treatment — preserved from v1 brand */
 .glitch-ai {
@@ -357,8 +369,10 @@
   background-clip: text;
   color: transparent;
   animation: shine-ai 4s ease-in-out infinite;
+  font-family: var(--font-accent);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 @keyframes shine-ai {
   0%, 100% { background-position: 0% 50%; }
@@ -608,23 +622,40 @@
 section { padding-block: var(--section-y); position: relative; }
 .section-head { margin-block-end: clamp(2.5rem, 5vw, 4rem); max-width: 64ch; }
 .section-head .eyebrow {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-size: var(--step--2);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  font-size: var(--step--1);
   color: var(--gold-400);
-  font-weight: 600;
-  font-family: var(--font-mono);
+  font-weight: 500;
+  font-family: var(--font-body);
   margin-block-end: 1rem;
+  letter-spacing: 0.01em;
 }
-.section-head .eyebrow .num { color: var(--purple-400); font-weight: 700; }
-.section-head h2 { max-width: 22ch; }
+.section-head .eyebrow .num {
+  color: var(--purple-400);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "ss01";
+  font-family: var(--font-mono);
+  opacity: 0.8;
+}
+.section-head h2 {
+  max-width: 22ch;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+.section-head h2 em,
+.section-head h2 .accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
 .section-head p {
   margin-block-start: 1rem;
   color: var(--text-secondary);
   font-size: var(--step-1);
   max-width: 58ch;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* ============================================================
@@ -654,12 +685,11 @@ section { padding-block: var(--section-y); position: relative; }
   border-color: var(--border-hi);
 }
 .svc-card .tag {
-  font-family: var(--font-mono);
-  font-size: var(--step--2);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+  font-family: var(--font-body);
+  font-size: var(--step--1);
   color: var(--purple-300);
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 .svc-card h3 {
   font-size: var(--step-2);
@@ -842,17 +872,16 @@ section { padding-block: var(--section-y); position: relative; }
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  font-family: var(--font-mono);
-  font-size: var(--step--2);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+  font-family: var(--font-body);
+  font-size: var(--step--1);
   color: var(--neon-red);
-  font-weight: 600;
+  font-weight: 500;
   margin-block-end: 1.25rem;
   padding: 0.5rem 0.95rem;
   border: 1px solid rgba(239, 68, 68, 0.35);
   border-radius: var(--radius-full);
   background: rgba(15, 15, 26, 0.7);
+  letter-spacing: 0.01em;
 }
 .cta-final .eyebrow::before {
   content: "";
@@ -896,13 +925,12 @@ section { padding-block: var(--section-y); position: relative; }
   margin-block-end: 3rem;
 }
 .footer-grid h4 {
-  font-size: var(--step--2);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+  font-size: var(--step--1);
   color: var(--gold-400);
   margin-block-end: 1rem;
   font-weight: 600;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
+  letter-spacing: 0.01em;
 }
 .footer-grid a {
   color: var(--text-secondary);
@@ -977,5 +1005,15 @@ section { padding-block: var(--section-y); position: relative; }
 /* Utilities */
 .muted  { color: var(--text-muted); }
 .mono   { font-family: var(--font-mono); }
+.accent { font-family: var(--font-accent); font-style: italic; font-weight: 400; letter-spacing: -0.02em; }
 .tnum   { font-variant-numeric: tabular-nums; }
-.grad-text { background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.grad-text {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
