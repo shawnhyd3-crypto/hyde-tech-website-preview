@@ -323,14 +323,18 @@ section { padding-block: clamp(6rem, 14vw, 14rem); }
   box-shadow: 0 0 10px var(--gold-500);
 }
 
-/* Giant logo moment — the central image that grounds the page */
+/* Giant logo moment with sonar rings — outgoing-call visual motif */
 .hero-logo {
   display: grid;
   place-items: center;
-  margin-block-end: 2rem;
+  margin-block-end: 2.5rem;
   position: relative;
   isolation: isolate;
+  width: clamp(280px, 38vw, 460px);
+  height: clamp(280px, 38vw, 460px);
+  margin-inline: auto;
 }
+/* Halo glow */
 .hero-logo::before {
   content: "";
   position: absolute;
@@ -339,27 +343,52 @@ section { padding-block: clamp(6rem, 14vw, 14rem); }
   height: clamp(250px, 35vw, 440px);
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.35) 0%, rgba(124, 58, 237, 0.20) 35%, transparent 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.42) 0%, rgba(124, 58, 237, 0.25) 35%, transparent 70%);
   filter: blur(50px);
   animation: logo-halo 6s ease-in-out infinite;
   z-index: -1;
 }
 @keyframes logo-halo {
   0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
-  50%      { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }
+  50%      { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
 }
+
+/* Sonar rings — 3 concentric expanding rings, staggered. Signature outgoing-call theme. */
+.hero-logo .sonar {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  animation: sonar-expand 3.6s cubic-bezier(0, 0.55, 0.45, 1) infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+.hero-logo .sonar:nth-child(2) { animation-delay: 1.2s; border-color: rgba(124, 58, 237, 0.45); }
+.hero-logo .sonar:nth-child(3) { animation-delay: 2.4s; border-color: rgba(0, 240, 255, 0.35); }
+@keyframes sonar-expand {
+  0%   { transform: scale(0.55); opacity: 0.9; border-width: 2px; }
+  100% { transform: scale(1.35); opacity: 0; border-width: 1px; }
+}
+
 .hero-logo img {
-  width: clamp(96px, 14vw, 160px);
+  position: relative;
+  z-index: 1;
+  width: clamp(120px, 16vw, 192px);
   height: auto;
-  animation: logo-float 8s ease-in-out infinite;
-  filter: drop-shadow(0 0 24px rgba(245, 158, 11, 0.45)) drop-shadow(0 0 60px rgba(124, 58, 237, 0.35));
+  animation: logo-float 8s ease-in-out infinite, logo-in 1s var(--ease-out) 100ms both;
+  filter: drop-shadow(0 0 24px rgba(245, 158, 11, 0.55)) drop-shadow(0 0 60px rgba(124, 58, 237, 0.45));
 }
 @keyframes logo-float {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-8px); }
 }
+@keyframes logo-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.92); filter: drop-shadow(0 0 0 transparent) blur(8px); }
+  to   { opacity: 1; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .hero-logo::before, .hero-logo img { animation: none; }
+  .hero-logo::before, .hero-logo img, .hero-logo .sonar { animation: none; }
+  .hero-logo .sonar { opacity: 0; }
 }
 
 .hero h1 {
@@ -372,7 +401,22 @@ section { padding-block: clamp(6rem, 14vw, 14rem); }
   font-weight: 700;
   color: var(--text-primary);
 }
-.hero h1 .line { display: block; }
+/* Staggered line reveal — each H1 line cascades in */
+.hero h1 .line {
+  display: block;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: line-rise 900ms var(--ease-out) forwards;
+}
+.hero h1 .line:nth-child(1) { animation-delay: 350ms; }
+.hero h1 .line:nth-child(2) { animation-delay: 550ms; }
+.hero h1 .line:nth-child(3) { animation-delay: 750ms; }
+@keyframes line-rise {
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 .line { opacity: 1; transform: none; animation: none; }
+}
 .hero h1 .gold { color: var(--gold-400); }
 .hero h1 em,
 .hero h1 .accent {
@@ -1211,6 +1255,72 @@ section { position: relative; }
 }
 @media (max-width: 720px) {
   .feature .f-bullets { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   v7.1 — Stat row (count-up on scroll into view)
+   ============================================================ */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-m);
+  max-width: 56rem;
+  margin: 0 auto 3rem;
+}
+.stat {
+  padding: 1.75rem 1rem;
+  background: rgba(26, 26, 46, 0.35);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-l);
+  text-align: center;
+}
+.stat-n {
+  font-family: var(--font-body);
+  font-size: var(--step-stat);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-variant-numeric: tabular-nums;
+}
+.stat-unit { font-size: 0.5em; opacity: 0.7; letter-spacing: 0.02em; }
+.stat-l {
+  margin-block-start: 0.5rem;
+  font-size: var(--step--1);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+@media (max-width: 720px) {
+  .stat-row { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   v7.1 — Scan line across hero (v1 brand signature, restored subtly)
+   ============================================================ */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: -10%;
+  right: -10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold-500) 40%, var(--neon-cyan) 50%, var(--purple-400) 60%, transparent 100%);
+  opacity: 0.55;
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.4), 0 0 48px rgba(124, 58, 237, 0.3);
+  animation: scan-down 7s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes scan-down {
+  0%   { top: 0%; opacity: 0; }
+  8%   { opacity: 0.55; }
+  92%  { opacity: 0.55; }
+  100% { top: 100%; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scan-line { animation: none; display: none; }
 }
 
 /* Utilities */

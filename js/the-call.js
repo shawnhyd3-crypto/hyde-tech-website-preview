@@ -103,6 +103,53 @@
   window.addEventListener('resize', onScroll, { passive: true });
   update();
 
+  /* --- Counter-up stats: numbers tick from 0 when they scroll into view --- */
+  const counters = document.querySelectorAll('[data-count]');
+  if (counters.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.dataset.count, 10);
+        if (reduce) { el.textContent = target; io.unobserve(el); return; }
+        const duration = 1400;
+        const start = performance.now();
+        function step(now) {
+          const t = Math.min(1, (now - start) / duration);
+          // easeOutCubic
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = Math.floor(eased * target);
+          if (t < 1) requestAnimationFrame(step);
+          else el.textContent = target;
+        }
+        requestAnimationFrame(step);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(c => io.observe(c));
+  }
+
+  /* --- Magnetic primary CTAs on desktop --- */
+  const canHoverMag = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (canHoverMag && !reduce) {
+    document.querySelectorAll('.btn-primary.btn-xl, .btn-primary.btn-lg').forEach(btn => {
+      let rafM = null;
+      btn.addEventListener('pointermove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const x = e.clientX - (r.left + r.width / 2);
+        const y = e.clientY - (r.top + r.height / 2);
+        if (rafM) cancelAnimationFrame(rafM);
+        rafM = requestAnimationFrame(() => {
+          btn.style.transform = `translate(${x * 0.2}px, ${y * 0.28}px)`;
+        });
+      });
+      btn.addEventListener('pointerleave', () => {
+        if (rafM) cancelAnimationFrame(rafM);
+        btn.style.transform = '';
+      });
+    });
+  }
+
   /* --- Subtle 3deg mouse-parallax tilt on the card --- */
   const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   if (canHover) {
