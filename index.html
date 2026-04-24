@@ -4,26 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
-  <title>Hyde Tech Solutions — AI phone agents & managed tech for the GTA</title>
-  <meta name="description" content="Two things, one operator. AI phone agents that answer every call. Managed tech — WiFi, cameras, smart home, on-site support — for small businesses across Toronto, Mississauga, Oakville, Burlington, Hamilton.">
-  <meta name="theme-color" content="#1a1d26">
+  <title>Hyde Tech Solutions — AI phone agents answering the calls you miss</title>
+  <meta name="description" content="AI phone agents that answer every call, book the job, and text you the summary. Plus managed tech — WiFi, cameras, smart home — for small businesses across the GTA. Hear the AI live at (289) 512-0207.">
+  <meta name="theme-color" content="#0F0F1A">
 
   <meta name="robots" content="noindex, nofollow">
   <meta property="og:title" content="Hyde Tech Solutions — AI phone agents & managed tech">
-  <meta property="og:description" content="AI receptionists that answer, book, and never put callers on hold. Plus the everyday tech infrastructure every small business needs.">
+  <meta property="og:description" content="A 24/7 AI receptionist that answers every call. Call it now: (289) 512-0207.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hydetech.ca/">
   <meta property="og:image" content="https://hydetech.ca/og.jpg">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
 
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/site.css">
+
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/shawnhyd3-crypto/hyde-tech-assets/master/hyde-tech-logo.png">
 
   <script type="application/ld+json">
   {
@@ -47,7 +46,8 @@
           "Smart home and business automation",
           "Remote and on-site tech support"
         ],
-        "founder": { "@type": "Person", "name": "Shawn Hyde" }
+        "founder": { "@type": "Person", "name": "Shawn Hyde" },
+        "logo": "https://raw.githubusercontent.com/shawnhyd3-crypto/hyde-tech-assets/master/hyde-tech-logo.png"
       }
     ]
   }
@@ -57,10 +57,12 @@
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <div class="noise" aria-hidden="true"></div>
+
   <!-- LIVE BELT -->
   <div class="live-belt" role="region" aria-label="AI demo line">
     <div class="live-belt__inner">
-      <span class="live-belt__status"><span class="live-belt__dot" aria-hidden="true"></span><strong>Live demo line</strong><span class="muted" style="text-transform:none; letter-spacing:0.02em;">— this number is our AI agent</span></span>
+      <span class="live-belt__status"><span class="live-belt__dot" aria-hidden="true"></span><strong>LIVE DEMO</strong><span class="muted" style="letter-spacing:0.02em; text-transform:none;">this number is our AI — call it</span></span>
       <a href="tel:+12895120207">(289) 512-0207</a>
     </div>
   </div>
@@ -70,7 +72,7 @@
     <div class="container header-inner">
       <a class="logo" href="./" aria-label="Hyde Tech Solutions home">
         <span class="logo-mark" aria-hidden="true">HT</span>
-        <span>Hyde Tech</span>
+        <span>Hyde <span class="logo-text">Tech</span></span>
       </a>
       <nav class="site-nav" id="site-nav" aria-label="Primary">
         <a href="ai-phone-agents/">AI Phone Agents</a>
@@ -79,10 +81,7 @@
         <a href="contact/">Contact</a>
       </nav>
       <div class="header-cta">
-        <a class="header-phone" href="tel:+12895120207" aria-label="Call (289) 512-0207">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          (289) 512-0207
-        </a>
+        <a class="btn btn-live" href="tel:+12895120207" aria-label="Call (289) 512-0207 — live demo"><span class="pulse" aria-hidden="true"></span>Hear the AI</a>
         <a class="btn btn-primary" href="contact/">Book consult</a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       </div>
@@ -93,92 +92,93 @@
 
     <!-- HERO -->
     <section class="hero">
-      <div class="mesh" aria-hidden="true"></div>
+      <div class="ambient" aria-hidden="true"></div>
       <div class="grid-veil" aria-hidden="true"></div>
       <div class="container">
-        <span class="eyebrow">Hamilton · serving the GTA</span>
-        <h1>Two things we do.<br><span class="grad">Both the same discipline.</span></h1>
-        <p class="sub">
-          Hyde Tech runs AI phone agents that answer every call — and the managed-tech backbone that small service businesses depend on. Trades, wellness, salons, property managers. From Port Credit to Guelph Line.
-        </p>
+        <div class="hero-row">
+          <div>
+            <span class="eyebrow">Hamilton · serving the GTA · 2026</span>
+            <h1>
+              Your phone rings.<br>
+              <span class="brand-grad">Every call</span> answered.<br>
+              Every line covered.
+            </h1>
+            <p class="sub">
+              Hyde Tech builds AI phone agents that pick up every call — and runs the managed tech that small service businesses depend on. Trades, wellness, salons, property managers. From Port Credit to Guelph Line.
+            </p>
+            <div class="hero-ctas">
+              <a class="btn btn-primary btn-xl" href="tel:+12895120207">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Call the live AI — (289) 512-0207
+              </a>
+              <a class="btn btn-outline btn-xl" href="ai-phone-agents/">See how it works →</a>
+            </div>
+            <ul class="trust-strip" aria-label="Quick facts">
+              <li><strong>01</strong>&nbsp;24/7 AI receptionist <span class="sep">·</span> books into your calendar</li>
+              <li><strong>02</strong>&nbsp;Owner-operated <span class="sep">·</span> flat pricing, no surprise bills</li>
+              <li><strong>03</strong>&nbsp;On-site across <span class="sep">·</span> 6 GTA cities</li>
+            </ul>
+          </div>
 
-        <div class="hero-split">
-
-          <!-- AI TILE -->
-          <a class="tile tile--ai reveal" href="ai-phone-agents/" aria-label="Learn about AI phone agents">
-            <div class="tile-head">
-              <span class="tag"><span class="dot" aria-hidden="true"></span><strong>LIVE</strong>&nbsp;· AI Phone Agents</span>
-            </div>
-            <div>
-              <h2 class="tile-title">A 24/7 receptionist that books the job.</h2>
-              <p class="tile-body">Trained on your services, pricing, and calendar. Answers every ring, texts confirmations, hands off only when needed.</p>
-              <div class="small">Hear it now</div>
-              <span class="phone-display">(289) 512-0207</span>
-              <div class="waveform" aria-hidden="true">
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-              </div>
-            </div>
-            <div class="tile-foot">
-              <span class="mono" style="font-size:var(--step--2); color:var(--text-muted); letter-spacing:0.12em; text-transform:uppercase;">$500 setup · $79–$129/mo</span>
-              <span class="tile-cta">See how it works</span>
-            </div>
-          </a>
-
-          <!-- MANAGED TECH TILE -->
-          <a class="tile tile--it reveal" href="services/" aria-label="Learn about managed tech services">
-            <div class="tile-head">
-              <span class="tag"><span class="dot" aria-hidden="true"></span><strong>ONLINE</strong>&nbsp;· Managed Tech</span>
-            </div>
-            <div>
-              <h2 class="tile-title">The everyday tech that keeps the lights on.</h2>
-              <p class="tile-body">Business WiFi, security cameras, smart-home and smart-business setups, and the on-site support that trades and small shops need yesterday.</p>
-              <div class="uptime-row">
-                <div class="uptime-cell"><span class="n">5 yrs</span><span class="l">Running</span></div>
-                <div class="uptime-cell"><span class="n">24 hr</span><span class="l">Response</span></div>
-                <div class="uptime-cell"><span class="n">6 cities</span><span class="l">On-site</span></div>
-              </div>
-            </div>
-            <div class="tile-foot">
-              <span class="mono" style="font-size:var(--step--2); color:var(--text-muted); letter-spacing:0.12em; text-transform:uppercase;">From $350 site survey</span>
-              <span class="tile-cta">Services &amp; pricing</span>
-            </div>
-          </a>
-
+          <div class="voice-stage" aria-hidden="true">
+            <div class="voice-waves"><canvas id="voice-canvas"></canvas></div>
+            <div class="voice-blob"></div>
+            <div class="live-tag"><span class="dot"></span><strong>LIVE</strong>&nbsp;· call (289) 512-0207</div>
+          </div>
         </div>
-
-        <ul class="trust-strip" aria-label="Quick facts">
-          <li><strong>01</strong>&nbsp;Owner-operated <span class="sep">·</span> you deal with Shawn, not a ticket queue</li>
-          <li><strong>02</strong>&nbsp;Serving GTA + Hamilton on-site</li>
-          <li><strong>03</strong>&nbsp;Flat monthly pricing <span class="sep">·</span> no surprise bills</li>
-        </ul>
       </div>
     </section>
 
-    <!-- DUAL SERVICES -->
+    <!-- MARQUEE — persona types -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Landscapers</span><span class="dot">●</span>
+        <span class="fill">Cleaners</span><span class="dot">●</span>
+        <span>Plumbers</span><span class="dot">●</span>
+        <span class="fill">Electricians</span><span class="dot">●</span>
+        <span>Salons</span><span class="dot">●</span>
+        <span class="fill">HVAC</span><span class="dot">●</span>
+        <span>Studios</span><span class="dot">●</span>
+        <span class="fill">Property Mgrs</span><span class="dot">●</span>
+        <span>Window Cleaners</span><span class="dot">●</span>
+        <span class="fill">Restoration</span><span class="dot">●</span>
+        <!-- duplicated for seamless loop -->
+        <span>Landscapers</span><span class="dot">●</span>
+        <span class="fill">Cleaners</span><span class="dot">●</span>
+        <span>Plumbers</span><span class="dot">●</span>
+        <span class="fill">Electricians</span><span class="dot">●</span>
+        <span>Salons</span><span class="dot">●</span>
+        <span class="fill">HVAC</span><span class="dot">●</span>
+        <span>Studios</span><span class="dot">●</span>
+        <span class="fill">Property Mgrs</span><span class="dot">●</span>
+        <span>Window Cleaners</span><span class="dot">●</span>
+        <span class="fill">Restoration</span><span class="dot">●</span>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
     <section class="services" id="services">
       <div class="container">
         <header class="section-head">
           <span class="eyebrow"><span class="num">02</span>What we do</span>
-          <h2>One tech partner. Two sides of the shop.</h2>
-          <p>The AI phone agent is the new thing — the offering that's changed what a small-business receptionist looks like. The rest is the infrastructure every small business needs running and nobody wants to think about.</p>
+          <h2>One operator. <span class="grad-text">Two sides of the shop.</span></h2>
+          <p>The AI phone agent is the new thing — the offering that changed what a small-business receptionist looks like. The rest is the infrastructure every small business needs running and nobody wants to think about.</p>
         </header>
 
         <div class="svc-grid">
 
           <article class="svc-card svc-card--flagship reveal">
-            <div class="flagship-copy">
-              <span class="tag"><span class="dot" aria-hidden="true"></span><strong>NEW · FLAGSHIP</strong></span>
-              <h3>AI phone agents that answer every call, book the job, and never put a customer on hold.</h3>
-              <p>Your 24/7 receptionist, trained on your services, pricing, and availability. Books into your calendar, texts confirmations, and hands off to you only when it actually needs to. Setup from $500 · $79–$129/mo.</p>
+            <div>
+              <span class="tag">Flagship · New for 2026</span>
+              <h3>AI phone agents that answer every call, book the job, and text you the summary.</h3>
+              <p>A 24/7 receptionist trained on your services, pricing, and availability. Never puts callers on hold. Never sends them to voicemail. Hands off to you only when it actually needs to.</p>
+              <p class="mono" style="color:var(--gold-400); margin-block-start:1rem; font-size:var(--step--1); letter-spacing:0.04em;">$500 setup · $79–$129/mo · no long-term contract</p>
             </div>
             <aside class="flagship-cta">
-              <small>Live demo — hear it now</small>
-              <a class="phone-display" href="tel:+12895120207">(289) 512-0207</a>
-              <span class="mono" style="font-size:var(--step--2); color:var(--text-muted);">Call it. Interrupt it. Try to break it.</span>
-              <a class="btn btn-primary" href="ai-phone-agents/" style="margin-block-start:0.5rem;">How it works</a>
+              <small class="mono" style="color:var(--text-muted); font-size:var(--step--2); text-transform:uppercase; letter-spacing:0.14em;">Live demo — hear it now</small>
+              <a class="phone-big" href="tel:+12895120207">(289) 512-0207</a>
+              <span class="mono muted" style="font-size:var(--step--2);">Call it. Interrupt it. Try to break it.</span>
+              <a class="btn btn-primary" href="ai-phone-agents/" style="margin-block-start:0.5rem;">How it works →</a>
             </aside>
           </article>
 
@@ -192,8 +192,8 @@
           <article class="svc-card reveal">
             <span class="tag">Security cameras</span>
             <h3>Cameras that actually record.</h3>
-            <p>Reolink and UniFi builds with proper NVR, remote view, and motion alerts that don't fire on every breeze in the parking lot.</p>
-            <span class="price">From $850 4-cam install</span>
+            <p>Reolink and UniFi builds with proper NVR, remote view, and motion alerts that don't fire on every breeze in the lot.</p>
+            <span class="price">From $850 · 4-cam install</span>
           </article>
 
           <article class="svc-card reveal">
@@ -206,15 +206,15 @@
           <article class="svc-card reveal">
             <span class="tag">Support</span>
             <h3>Remote &amp; on-site tech support.</h3>
-            <p>The stuff that breaks on Tuesday morning. Printer won't connect, router eating packets, new laptop to set up. Solo-operator rates, no agency markup.</p>
+            <p>Printer won't connect. Router eating packets. New laptop to set up. Solo-operator rates, no agency markup.</p>
             <span class="price">$85/hr remote · $110/hr on-site</span>
           </article>
 
           <article class="svc-card reveal">
             <span class="tag">Migrations</span>
             <h3>Off the spreadsheet, into the right tool.</h3>
-            <p>Jobber setup, client imports, invoicing flows, Google Workspace. I've done this for landscapers, cleaners, and window-services ops in the GTA.</p>
-            <span class="price">Scoped quote</span>
+            <p>Jobber setup, client imports, invoicing flows, Google Workspace. Done for landscapers, cleaners, window-services ops.</p>
+            <span class="price">Scoped quote · $250–$1,500</span>
           </article>
 
         </div>
@@ -226,7 +226,7 @@
       <div class="container">
         <header class="section-head">
           <span class="eyebrow"><span class="num">03</span>How it goes</span>
-          <h2>From first call to first job, four steps.</h2>
+          <h2>First call to first job — <span class="grad-text">four steps.</span></h2>
         </header>
         <div class="steps">
           <div class="step reveal" data-step="01">
@@ -235,7 +235,7 @@
           </div>
           <div class="step reveal" data-step="02">
             <h3>15-minute consult</h3>
-            <p>We talk services, pricing, after-hours rules. I pull the agent's script from what you tell me and how your current calls actually go.</p>
+            <p>Services, pricing, after-hours rules. The agent's script is pulled from what you tell me and how your calls actually go.</p>
           </div>
           <div class="step reveal" data-step="03">
             <h3>Test line goes up</h3>
@@ -243,7 +243,7 @@
           </div>
           <div class="step reveal" data-step="04">
             <h3>Port or forward</h3>
-            <p>Forward your existing number or port it over. The agent's live; you stop missing jobs.</p>
+            <p>Forward your existing number or port it over. Agent's live. You stop missing jobs.</p>
           </div>
         </div>
       </div>
@@ -254,28 +254,24 @@
       <div class="container">
         <header class="section-head">
           <span class="eyebrow"><span class="num">04</span>Recent work</span>
-          <h2>Small-business tech, done the same way every time.</h2>
+          <h2>Small-business tech, <span class="grad-text">done the same way every time.</span></h2>
         </header>
         <div class="proof-grid">
-
           <article class="review reveal">
             <div class="stars" aria-hidden="true">★★★★★</div>
-            <p>Shawn rebuilt our booking flow end-to-end. Our AI agent picks up on weekends now and we've booked three jobs we would've missed.</p>
+            <p>Shawn rebuilt our booking flow end-to-end. Our AI agent picks up on weekends and we've booked three jobs we would've missed.</p>
             <cite><strong>Rake &amp; Clover</strong> — Jon, owner · Landscaping</cite>
           </article>
-
           <article class="review reveal">
             <div class="stars" aria-hidden="true">★★★★★</div>
             <p>Migrated our customer list off a spreadsheet, set up a proper invoicing flow, and diagnosed a router that was eating packets on our POS tablet.</p>
             <cite><strong>Crystal Window</strong> — Solomon, owner · Hamilton</cite>
           </article>
-
           <article class="review review--live reveal">
-            <div class="stars" aria-hidden="true">◉◉◉◉◉</div>
-            <p>The AI phone agent answering our own line at <strong style="color:var(--text-hi);">(289) 512-0207</strong> is the same system we build for clients. Call it. Ask about pricing, our service area, or try to confuse it. That's the portfolio.</p>
-            <cite><strong><a href="tel:+12895120207" style="color:var(--text-hi);">(289) 512-0207</a></strong> — this number, right now</cite>
+            <div class="stars" aria-hidden="true">● LIVE ●</div>
+            <p>The AI answering our line at <strong style="color:var(--text-primary);">(289) 512-0207</strong> is the same system we build for clients. Call it. Ask about pricing, our service area, or try to confuse it. That's the portfolio.</p>
+            <cite><strong><a href="tel:+12895120207" style="color:var(--text-primary);">(289) 512-0207</a></strong> — this number, right now</cite>
           </article>
-
         </div>
       </div>
     </section>
@@ -285,9 +281,9 @@
       <div class="container">
         <div class="area-grid">
           <header>
-            <span class="eyebrow mono" style="display:inline-block; font-size:var(--step--2); text-transform:uppercase; letter-spacing:0.18em; color:var(--text-muted); margin-block-end:1rem;"><span style="color:var(--brand-hi);">05</span>&nbsp;&nbsp;Where we work</span>
-            <h2 style="font-size:var(--step-4); max-width:16ch;">Hamilton base. On-site across the GTA.</h2>
-            <p class="muted" style="margin-block-start:1rem; max-width:44ch; font-size:var(--step-0); line-height:1.55;">Remote support covers anywhere in Canada. For networks, cameras, and anything that needs hands on gear — these are the cities we show up to in person.</p>
+            <span class="mono" style="display:inline-block; font-size:var(--step--2); text-transform:uppercase; letter-spacing:0.2em; color:var(--gold-400); margin-block-end:1rem; font-weight:600;"><span style="color:var(--purple-400);">05</span>&nbsp;&nbsp;Where we work</span>
+            <h2 style="font-size:var(--step-4); max-width:16ch;">Hamilton base. <span class="grad-text">GTA on-site.</span></h2>
+            <p style="color:var(--text-secondary); margin-block-start:1rem; max-width:44ch; font-size:var(--step-0); line-height:1.55;">Remote support covers anywhere in Canada. For networks, cameras, and anything with hands on gear — these are the cities I show up to in person.</p>
           </header>
           <ul class="area-list">
             <li>Hamilton</li>
@@ -301,20 +297,34 @@
       </div>
     </section>
 
+    <!-- CALL LOG — live fake feed -->
+    <section class="call-log">
+      <div class="container">
+        <header>
+          <div>
+            <span class="eyebrow">Live call log · today</span>
+            <h2 style="margin-block-start:0.75rem;">The kinds of calls our AI <span class="grad-text">is already answering.</span></h2>
+          </div>
+          <p style="color:var(--text-muted); font-family:var(--font-mono); font-size:var(--step--2); letter-spacing:0.12em; text-transform:uppercase; max-width:22ch; text-align:right;">Sample of recent<br>demo-line traffic</p>
+        </header>
+        <div class="rows" id="call-log-rows" aria-live="polite"></div>
+      </div>
+    </section>
+
     <!-- FINAL CTA -->
     <section class="cta-final">
-      <div class="mesh" aria-hidden="true"></div>
+      <div class="ambient" aria-hidden="true"></div>
       <div class="container">
         <div class="cta-wrap">
-          <span class="eyebrow">LIVE demo · call right now</span>
-          <h2>Call the number. Hear the product.</h2>
-          <p>Ten seconds of your thumb. The agent picks up, introduces itself, and you'll know within a minute whether this is worth twenty more.</p>
+          <span class="eyebrow">Ready · call right now</span>
+          <h2>Don't read about it. <span class="grad-text">Call it.</span></h2>
+          <p>Ten seconds of your thumb. The agent picks up, introduces itself, and you'll know inside a minute whether this belongs in your business.</p>
           <a class="cta-phone" href="tel:+12895120207">(289) 512-0207</a>
           <div class="cta-row">
-            <a class="btn btn-primary btn-xl" href="tel:+12895120207">Call (289) 512-0207</a>
+            <a class="btn btn-primary btn-xl" href="tel:+12895120207">Call the live AI</a>
             <a class="btn btn-outline btn-xl" href="contact/">Book a 15-min consult</a>
           </div>
-          <p class="mono" style="font-size:var(--step--2); color:var(--text-muted); margin-block-start:2rem; letter-spacing:0.08em; text-transform:uppercase;">Mon–Fri 8a–6p · agent answers 24/7</p>
+          <p class="mono" style="font-size:var(--step--2); color:var(--text-muted); margin-block-start:2.5rem; letter-spacing:0.14em; text-transform:uppercase;">Mon–Fri 8a–6p · AI agent answers 24/7</p>
         </div>
       </div>
     </section>
@@ -326,9 +336,9 @@
     <div class="container">
       <nav class="footer-grid" aria-label="Footer">
         <div>
-          <p class="footer-brand"><span class="logo-mark" aria-hidden="true">HT</span>Hyde Tech</p>
+          <p class="footer-brand"><span class="logo-mark" aria-hidden="true">HT</span>Hyde <span class="logo-text">Tech</span></p>
           <p>AI phone agents and managed tech for small service businesses across the Greater Toronto and Hamilton area.</p>
-          <p style="margin-block-start:0.75rem;"><strong style="color:var(--text-hi);">Hamilton, ON · Canada</strong></p>
+          <p style="margin-block-start:0.75rem;"><strong style="color:var(--text-primary);">Hamilton, ON · Canada</strong></p>
         </div>
         <div>
           <h4>Services</h4>
@@ -346,9 +356,9 @@
         </div>
         <div>
           <h4>Contact</h4>
-          <p><a href="tel:+12895120207" class="mono" style="font-weight:600; color:var(--text-hi);">(289) 512-0207</a></p>
+          <p><a href="tel:+12895120207" class="mono" style="font-weight:600; color:var(--text-primary);">(289) 512-0207</a></p>
           <p><a href="mailto:info@hydetech.ca">info@hydetech.ca</a></p>
-          <p style="color:var(--text-muted); margin-block-start:0.5rem;">Mon–Fri 8a–6p · AI agent answers 24/7</p>
+          <p style="color:var(--text-muted); margin-block-start:0.5rem;">Mon–Fri 8a–6p · AI agent 24/7</p>
         </div>
       </nav>
       <div class="footer-bottom">
@@ -360,21 +370,10 @@
 
   <!-- MOBILE STICKY CTA -->
   <div class="mobile-cta">
-    <a class="btn btn-primary" href="tel:+12895120207">Call (289) 512-0207</a>
+    <a class="btn btn-primary" href="tel:+12895120207">Call the live AI</a>
     <a class="btn btn-outline" href="contact/">Book</a>
   </div>
 
-  <script>
-    (function () {
-      const btn = document.querySelector('.nav-toggle');
-      const nav = document.getElementById('site-nav');
-      if (!btn || !nav) return;
-      btn.addEventListener('click', () => {
-        const open = nav.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', String(open));
-      });
-    })();
-  </script>
-
+  <script src="js/interactions.js" defer></script>
 </body>
 </html>

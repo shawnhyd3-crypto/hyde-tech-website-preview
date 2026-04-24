@@ -1,7 +1,19 @@
-# Hyde Tech Solutions — v4 preview
+# Hyde Tech — v5 preview (home page)
 
-Dev / preview build of the v4 redesign (modern AI-product + managed-tech dual-persona aesthetic). **Noindexed**, not for production traffic.
+Bleeding-edge AI-forward dark-mode redesign using Hyde Tech's real brand (purple #7C3AED + gold #F59E0B + neon accents). Noindexed preview.
 
-Live version: [hydetech.ca](https://hydetech.ca) (still v1).
+Source of truth: `Hyde Tech Solutions/07 - Website/site-v5/` in the Claude Folder.
 
-Source of truth: `Hyde Tech Solutions/07 - Website/site-v4/` in the Claude Folder. This repo is a path-converted mirror for preview only (absolute → relative paths, CNAME + sitemap stripped, noindex on every page, robots.txt blocking all).
+Signature moves:
+- Animated conic gradient orb behind hero (CSS @property hue interpolation)
+- Voice orb with morphing blob + Canvas audio-reactive waveform halo
+- Variable-font hero animating wght axis on load
+- Gradient text (gold→purple→cyan "shine" animation)
+- Magnetic CTAs + gold cursor follower orb (desktop only)
+- Scrolling marquee of client personas
+- Hover-spotlight on service cards (cursor-tracked radial gradient)
+- Live call-log feed with rotating fake entries
+- Noise film overlay + grid veil in hero
+- Scroll-driven reveals via animation-timeline: view()
+
+Other pages (services, ai-phone-agents, about, contact, 404) are placeholder-routed to home until the direction is confirmed.
