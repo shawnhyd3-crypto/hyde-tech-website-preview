@@ -1,7 +1,8 @@
 /* ============================================================
-   Hyde Tech Solutions — v6 site styles
-   Concept: "The Call" — one cinematic hero, then quiet sections.
-   Real logo. Perspective grid floor. Streaming transcript card.
+   Hyde Tech Solutions — v7 site styles
+   Concept: Apple-tier minimalism, subtraction over ornament.
+   Quiet hero. Sticky-scroll product theater. Three big features.
+   Massive whitespace. Purple + gold on dark. Film grain.
    ============================================================ */
 
 .container    { width: var(--container); margin-inline: auto; position: relative; }
@@ -284,14 +285,19 @@
 /* ============================================================
    HERO — centered, the call plays out live
    ============================================================ */
+/* Apple-tier section rhythm — generous breathing room between ideas. */
+section { padding-block: clamp(6rem, 14vw, 14rem); }
+
 .hero {
   position: relative;
-  padding-block: clamp(4rem, 10vw, 8rem) clamp(3rem, 7vw, 6rem);
+  padding-block: clamp(6rem, 12vw, 12rem) clamp(5rem, 10vw, 10rem);
   overflow: clip;
   isolation: isolate;
   text-align: center;
-  perspective: 1200px;
-  perspective-origin: 50% 40%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-eyebrow {
@@ -657,7 +663,7 @@
 /* ============================================================
    SECTION SCAFFOLDING
    ============================================================ */
-section { padding-block: var(--section-y); position: relative; }
+section { position: relative; }
 .section-head { margin-block-end: clamp(2.5rem, 5vw, 4rem); max-width: 64ch; }
 .section-head .eyebrow {
   display: inline-flex; align-items: center; gap: 0.55rem;
@@ -1041,6 +1047,170 @@ section { padding-block: var(--section-y); position: relative; }
 }
 @supports not (animation-timeline: view()) {
   .reveal { opacity: 1; animation: none; }
+}
+
+/* ============================================================
+   v7 — Scroll-locked "The Call" section.
+   Sticky transcript card inside a tall container. As you scroll,
+   lines reveal in sequence. Apple-style product theater.
+   ============================================================ */
+.call-section {
+  position: relative;
+  min-height: 260vh;              /* enough scroll to reveal 7-8 lines */
+  padding-block: 0;
+  isolation: isolate;
+}
+.call-section .call-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  padding-inline: var(--space-m);
+}
+.call-section__inner {
+  max-width: 780px;
+  width: 100%;
+  text-align: center;
+}
+.call-section__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: var(--step--1);
+  color: var(--gold-400);
+  margin-block-end: 1.5rem;
+  font-weight: 500;
+}
+.call-section__eyebrow::before {
+  content: "";
+  width: 0.4rem; height: 0.4rem;
+  border-radius: 50%;
+  background: var(--gold-500);
+  box-shadow: 0 0 10px var(--gold-500);
+}
+.call-section__title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  margin-block-end: 2rem;
+  max-width: 18ch;
+  margin-inline: auto;
+}
+.call-section__title .accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* Hide the in-section call card's original wrapper margin since it lives in a sticky */
+.call-section .the-call {
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+/* Scroll-driven line reveals — each line fades in at its own scroll range */
+.call-section .the-call__line {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 380ms var(--ease-out), transform 380ms var(--ease-out);
+}
+.call-section .the-call__line.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   v7 — Big feature blocks. One idea per section, massive type,
+   centered, tons of whitespace. Replaces the 6-card bento.
+   ============================================================ */
+.feature {
+  text-align: center;
+  padding-block: clamp(5rem, 10vw, 10rem);
+}
+.feature + .feature { border-top: 1px solid var(--hairline); }
+.feature .f-tag {
+  display: inline-block;
+  font-size: var(--step--1);
+  color: var(--gold-400);
+  letter-spacing: 0.02em;
+  margin-block-end: 1.5rem;
+  font-weight: 500;
+}
+.feature h2 {
+  font-size: clamp(2.75rem, 7vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+  max-width: 18ch;
+  margin-inline: auto;
+  margin-block-end: 1.5rem;
+  color: var(--text-primary);
+}
+.feature h2 .accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.feature .f-sub {
+  max-width: 52ch;
+  margin-inline: auto;
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-block-end: 2.5rem;
+}
+.feature .f-price {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--step-0);
+  color: var(--gold-400);
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: rgba(124, 58, 237, 0.06);
+  margin-block-end: 2rem;
+}
+.feature .f-bullets {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-m);
+  max-width: 64rem;
+  margin: 0 auto 2.5rem;
+  text-align: left;
+}
+.feature .f-bullets li {
+  max-width: none;
+  padding: 1rem 1.25rem;
+  background: rgba(26, 26, 46, 0.35);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-l);
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.feature .f-bullets li strong {
+  display: block;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-block-end: 0.25rem;
+}
+@media (max-width: 720px) {
+  .feature .f-bullets { grid-template-columns: 1fr; }
 }
 
 /* Utilities */
